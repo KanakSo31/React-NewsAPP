@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import NewsItem from './NewsItem'
-
-export class news extends Component {
-  articles =[
+{
+    "status": "ok",
+    "totalResults": 2,
+    "articles": [
     {
     "source": {
     "id": "espn-cric-info",
@@ -30,28 +29,4 @@ export class news extends Component {
     "content": "Last week, we at ESPNcricinfo did something we have been thinking of doing for eight years now: pretend-live ball-by-ball commentary for a classic cricket match. We knew the result, yes, but we tried… [+6823 chars]"
     }
     ]
-  constructor(){
-    super();
-    console.log("hello this is constructor");
-    this.state={
-      articles: this.articles,
-      loading: false
     }
-  }
-  render() {
-    return (
-      <div className='container my-3'>
-        <h2>Assam News - Headlines</h2>
-        <div className='row'>
-         {this.state.articles.map((element)=>{
-            return <div className='col-md-4' key={element.url}>
-              <NewsItem  title = {element.title.slice(0, 40)} description = {element.description.slice(0, 80)} imgUrl= {element.urlToImage} newsUrl = {element.url}/>
-            </div>
-         })}
-        </div>
-      </div>
-    )
-  }
-}
-
-export default news
