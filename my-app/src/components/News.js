@@ -53,7 +53,7 @@ export class news extends Component {
   render() {
     return (
       <div className='container my-3'>
-        <h2>All News - Headlines</h2>
+        <h2 className='text-center'>All News - Headlines</h2>
         <div className='row'>
          {this.state.articles.map((element)=>{
             return <div className='col-md-4' key={element.url}>
@@ -63,7 +63,7 @@ export class news extends Component {
         </div>
         <div className='container d-flex justify-content-between'>
         <button disabled={this.state.page<=1} type="button" className="btn btn-dark" onClick={this.handlePrevClick}>&larr; Privious</button>
-        <button type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
+        <button disabled = {this.state.page + 1 > Math.ceil(this.state.totalResults/20)} type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
         </div>
       </div>
     )
