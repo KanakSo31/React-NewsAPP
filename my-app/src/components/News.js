@@ -32,20 +32,32 @@ export class news extends Component {
     ]
   constructor(){
     super();
-    console.log("hello this is constructor");
     this.state={
       articles: this.articles,
       loading: false
     }
   }
+
+  async componentDidMount(){
+    console.log("cmd");
+    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=8c9b938866be46d694e319f6d069d1e0";
+    let data = await fetch(url);
+    let parsedData = await data.json()
+    console.log(parsedData);
+    this.setState({articles: parsedData.articles})
+
+  }
+
+
   render() {
+    console.log("rndr");
     return (
       <div className='container my-3'>
         <h2>Assam News - Headlines</h2>
         <div className='row'>
          {this.state.articles.map((element)=>{
             return <div className='col-md-4' key={element.url}>
-              <NewsItem  title = {element.title.slice(0, 40)} description = {element.description.slice(0, 80)} imgUrl= {element.urlToImage} newsUrl = {element.url}/>
+              <NewsItem  title = {element.title?element.title.slice(0, 40):""} description = {element.description?element.description.slice(0, 80):""} imgUrl= {element.urlToImage} newsUrl = {element.url}/>
             </div>
          })}
         </div>
