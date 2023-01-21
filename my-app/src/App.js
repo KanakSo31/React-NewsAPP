@@ -10,7 +10,7 @@ export default class App extends Component {
     return (
       <div className='container-flex'>
         <NavBar/>
-        <News pageSize = {6}/>
+        <News pageSize = {6} country= "in" category = "science"/>
       </div>
     )
   }
