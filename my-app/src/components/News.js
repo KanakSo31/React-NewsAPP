@@ -38,12 +38,12 @@ export class news extends Component {
       
     }
     else{
-      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=8c9b938866be46d694e319f6d069d1e0&page=${this.state.page + 1}pageSize =${this.props.pageSize}`;
+      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=8c9b938866be46d694e319f6d069d1e0&page=${this.state.page + 1}&pageSize = ${this.props.pageSize}`;
       let data = await fetch(url);
       let parsedData = await data.json()
       console.log(parsedData);
       this.setState({
-        page:this.state.page + 1,
+        page: this.state.page + 1,
         articles: parsedData.articles
       })
   }

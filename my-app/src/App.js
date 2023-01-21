@@ -8,9 +8,9 @@ import News from './components/News';
 export default class App extends Component {
   render() {
     return (
-      <div className='container'>
+      <div className='container-flex'>
         <NavBar/>
-        <News pageSize={5}/>
+        <News pageSize = {6}/>
       </div>
     )
   }
