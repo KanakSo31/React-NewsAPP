@@ -3,7 +3,7 @@ import NewsItem from './NewsItem'
 import Spinner from './Spinner'
 import PropTypes from 'prop-types'
 
-export class news extends Component {
+export class News extends Component {
   static defaultProps = {
     country: 'in',
     pageSize: 8,
@@ -120,4 +120,4 @@ export class news extends Component {
   }
 }
 
-export default news
+export default News
