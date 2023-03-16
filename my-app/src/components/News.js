@@ -56,6 +56,7 @@ export class News extends Component {
     let parsedData = await data.json()
 
     // console.log(parsedData);
+    // console.log(parsedData);
 
     this.setState({
 
