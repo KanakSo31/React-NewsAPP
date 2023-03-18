@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class NewsItem extends Component {
 
   render() {
-    let {title, description, imgUrl, newsUr, author, date} = this.props;
+    let {title, description, imgUrl, newsUrl, author, date} = this.props;
     return (
       <div className='my-3'>
         <div className="card" style={{width: "equal"}}>
