@@ -9,7 +9,7 @@ export class NewsItem extends Component {
         <div className="card" style={{ width: "equal" }}>
           <img src={!imgUrl ? "https://images.hindustantimes.com/tech/img/2023/01/20/1600x900/30dor_0_1674186986073_1674186993798_1674186993798.jpg" : imgUrl} className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">{title}<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+            <h5 className="card-title">{title}<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
               {"source"}
               <span class="visually-hidden">unread messages</span>
             </span></h5>
