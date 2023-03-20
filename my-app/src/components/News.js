@@ -23,6 +23,7 @@ export class News extends Component {
       loading: false,
       page: 1
     }
+    document.title = this.props.category;
   }
   async updateNews(pageNo){
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8c9b938866be46d694e319f6d069d1e0&page=${this.state.page}&pageSize=${this.props.pageSize}`;
