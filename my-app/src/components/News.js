@@ -63,7 +63,7 @@ export class News extends Component {
     })
   }
   handlePrevClick = async () => {
-    console.log("privious");
+    // console.log("privious");
 
     // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8c9b938866be46d694e319f6d069d1e0&page=${this.state.page-1}&pageSize = ${this.props.pageSize}`;
 
