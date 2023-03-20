@@ -122,7 +122,7 @@ export class News extends Component {
     return (
       <div className='container my-3'>
 
-        <h2 className='text-center fw-bold'>Leatest News</h2>
+        <h2 className='text-center fw-bold'>Leatest Headlines From - {this.capitalizeFirstLetter(this.props.category)}</h2>
 
         {this.state.loading && <Spinner />}
 
