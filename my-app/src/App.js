@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 // } from "react-router-dom";
 
 export default class App extends Component {
-  pageSize = 9; 
+  pageSize = 4; 
   render() {
     return (
       <div className='container-flex'>
