@@ -16,14 +16,17 @@ export class News extends Component {
     category : PropTypes.string,
   }
 
-  constructor() {
-    super();
+  capitalizeFirstLetter = (string) =>{
+    return string.charAt(0).toUpperCase()+string.slice(1);
+  }
+  constructor(props) {
+    super(props);
     this.state = {
       articles: [],
       loading: false,
       page: 1
     }
-    document.title = this.props.category;
+    document.title = `${this.capitalizeFirstLetter(this.props.category)} - DNews`;
   }
   async updateNews(pageNo){
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8c9b938866be46d694e319f6d069d1e0&page=${this.state.page}&pageSize=${this.props.pageSize}`;
