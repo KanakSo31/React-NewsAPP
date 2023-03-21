@@ -142,7 +142,7 @@ export class News extends Component {
   render() {
     return (
       <>
-      // <div className='container my-3'>
+      {/* <div className='container my-3'> */}
 
         <h2 className='text-center fw-bold'>Leatest Headlines From - {this.capitalizeFirstLetter(this.props.category)}</h2>
 
@@ -175,7 +175,7 @@ export class News extends Component {
           <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)} type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
 
         </div> */}
-      // </div>
+      {/* </div> */}
     
     </>
     )
