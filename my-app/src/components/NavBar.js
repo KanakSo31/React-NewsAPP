@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom";
+// class based
+// class Navbar extends Component {
 
-class Navbar extends Component {
-
-  render() {
+  //function based
+const Navbar = ()=>{
+  // render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -39,7 +41,7 @@ class Navbar extends Component {
         </nav>
       </div>
     )
-  }
+  // }
 }
 
 export default Navbar
