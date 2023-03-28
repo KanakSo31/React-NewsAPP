@@ -2,16 +2,17 @@
 import React, { Component } from 'react'
 import Walk from "./Walk.gif"
 
-export class Spinner extends Component {
-  static propTypes = {}
+// export class Spinner extends Component {
+const Spinner = () => {
+  // static propTypes = {}
 
-  render() {
-    return (
-      <div className='text-center'>
-        <img src={Walk} alt="loading"/>
-      </div>
-    )
-  }
+  // render() {
+  return (
+    <div className='text-center'>
+      <img src={Walk} alt="loading" />
+    </div>
+  )
+  // }
 }
 
 export default Spinner
