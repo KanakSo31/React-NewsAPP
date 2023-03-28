@@ -6,10 +6,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 // export class News extends Component {
   const News =(props)=>{
-    useState[articles, setArticle] = useState([])
-    useState[loading, setLoading] = useState(true)
-    useState[page, setPage] = useState(1)
-    useState[totalResults, setTotalResults] = useState(0)
+    const [articles, setArticle] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [page, setPage] = useState(1)
+    const [totalResults, setTotalResults] = useState(0)
     // document.title = `${this.capitalizeFirstLetter(props.category)} - DNews`;
 
   const capitalizeFirstLetter = (string) => {
@@ -54,8 +54,9 @@ import InfiniteScroll from "react-infinite-scroll-component";
     setPage(page + 1)
     updateNews();
   }
-  fetchMoreData = async() => {
-    props.setState({page: props.page + 1})
+  const fetchMoreData = async() => {
+    setPage(page + 1)
+    // props.setState({page: props.page + 1})
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=8c9b938866be46d694e319f6d069d1e0&page=${props.page}&pageSize=${props.pageSize}`;
     // console.log(url);
     props.setState({ loading: true });
@@ -63,15 +64,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
     let data = await fetch(url);
 
     let parsedData = await data.json()
-    setArticles(articles.concat(parsedData.articles))
+    setArticle(articles.concat(parsedData.articles))
     setTotalResults(parsedData.totalResults)
-
-    // props.setState({
-    //   articles: props.state.articles.concat(parsedData.articles),
-    //   totalResults: parsedData.totalResults,
-    //   loading: false
-
-    // })
   };
   // render() {
     return (
@@ -83,7 +77,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
         {loading && <Spinner />}
         <InfiniteScroll
           dataLength={articles.length}
-          next={this.fetchMoreData}
+          next={fetchMoreData}
           hasMore={articles.length !== totalResults}
           loader={<Spinner/>}
         >
@@ -91,7 +85,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
           <div className='row'>
 
             {/* {!this.loading && this.state.articles.map((element) => { */}
-            {this.state.articles.map((element) => {
+            {articles.map((element) => {
 
               return <div className='col-md-4' key={element.url}>
 
